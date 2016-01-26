@@ -1,0 +1,43 @@
+﻿@model Toman296Lab2.Models.ForumView
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ForumName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastModified)
+        </th>
+        <th></th>
+    </tr>
+
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.ForumName)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.LastModified)
+        </td>
+    </tr>
+ 
+            @foreach (var m in Model.Messages)
+            {
+         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => m.Subject)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => m.Body)
+            </td>
+        </tr>
+            }
+        </table>
