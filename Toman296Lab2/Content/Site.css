@@ -1,0 +1,22 @@
+﻿body {
+    padding-bottom: 20px;
+    background-image: url("forest.jpg");
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.container {
+    padding: 25px;
+    background-color: rgba(255, 255, 255, 0.80);
+}
