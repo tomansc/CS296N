@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Toman296Lab2.Models.NewsItem>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-6">
+        @foreach (var item in Model)
+        {
+            <table class="table table-condensed">
+                <tr class="success">
+                    <td>
+                        <b>@Html.DisplayFor(modelItem => item.Title)</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <i>@Html.DisplayFor(modelItem => item.Author)</i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <i>@Html.DisplayFor(modelItem => item.Date)</i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Copy)
+                    </td>
+                </tr>
+            </table>
+        }
+    </div>
+</div>

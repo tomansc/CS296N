@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2><small>Search by Subject</small></h2>
+@using (Html.BeginForm()) 
+{
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <div class="col-md-3">
+                @Html.Label("Enter a subject keyword:", new { htmlAttributes = new { @class = "form-control" } })
+                &nbsp;
+                @Html.Editor("searchTerm")
+                <br />
+            </div>
+            <div class="col-md-9">
+                <br />
+                <input type="submit" value="Search" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+

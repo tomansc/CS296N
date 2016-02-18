@@ -1,0 +1,63 @@
+﻿@model Toman296Lab2.Models.ForumView
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Forum messages</h2>
+
+
+<table class="table">
+    <tr>
+        <td class="table-success">
+            <strong>
+            @Html.DisplayNameFor(model => model.ForumName)
+            </strong>
+            <br />
+            @Html.DisplayFor(model => model.ForumName)
+            <br />
+            <strong>
+            @Html.DisplayNameFor(model => model.LastModified)
+            </strong>
+            <br />
+            @Html.DisplayFor(model => model.LastModified)
+            <br />
+            <a href="/ForumView/Search" class="btn btn-default">
+                <span class="glyphicon glyphicon-search"></span>  
+            &nbsp;Search messages by subject 
+            </a>
+        </td>
+        <th></th>
+    </tr>
+    <tr>
+        <td>
+            <h3><small>Subject</small></h3>
+        </td>
+        <td>
+            <h3><small>Date modified</small></h3>
+        </td>
+    </tr>
+
+    @foreach (var m in Model.Messages)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => m.Subject)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => m.Date)
+            </td>
+            <td>
+                @(Html.ActionLink("View message details", "Details", new { id = m.MessageID }))
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = m.MessageID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = m.MessageID })
+            </td>
+        </tr>
+    }
+</table>
+<p>
+    @Html.ActionLink("Create a new message", "Create")
+</p>

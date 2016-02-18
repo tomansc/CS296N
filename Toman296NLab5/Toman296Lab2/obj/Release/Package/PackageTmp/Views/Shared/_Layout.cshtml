@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">CS296 Lab 2</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="~/Home/Index">Home</a></li>
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        Extras
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="~/Home/About">About the author</a></li>
+                        <li><a href="~/Home/Contact">Contact the author</a></li>
+                        <li><a href="~/Home/History">Bellingham's history</a></li>
+                    </ul>
+                </li>
+                <li><a href="~/Map/Map">Map</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    News
+                    <span class="caret"></span>    
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="~/News/Recent">Recent news</a></li>
+                    <li><a href="~/News/Archive">Archived news</a></li>
+                </ul>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h3>@ViewBag.Message</h3><br />
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>
+                <small>
+                    This site is in no way endorsed, monitored, or remotely on the radar
+                    of the City of Bellingham. News stories may be wholly or partially fabricated
+                    as may portions of the town's history as laid out on the "History" page. The
+                    creator of this page shirks all legal responsibility for these deliberate and
+                    flagrant inaccuracies.
+                </small>
+            </p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
